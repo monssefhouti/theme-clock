@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+:root {
+  --primaryColor: #000;
+  --secondaryColor: white; }
+
+html.dark {
+  --primaryColor: #111;
+  --secondaryColor: #333;
+  background-color: var(--primaryColor);
+  color: white; }
+
+html {
+  transition: 0.5s ease-in; }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+  height: 100vh;
+  overflow: hidden; }
+
+.toggle {
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  padding: 1rem 5rem;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: .5s ease-in;
+  position: absolute;
+  top: 10rem;
+  border: none; }
+  .toggle:focus {
+    outline: transparent; }
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+  .clock-container .clock {
+    position: relative;
+    width: 20rem;
+    height: 20rem; }
+    .clock-container .clock .needle {
+      background-color: var(--primaryColor);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 6rem;
+      width: 3px;
+      transform-origin: bottom center;
+      transition: all .5s ease-in-out;
+      border-radius: 10px; }
+      .clock-container .clock .needle.hour {
+        transform: translate(-50%, -100%) rotate(0deg); }
+      .clock-container .clock .needle.minute {
+        transform: translate(-50%, -100%) rotate(0deg);
+        height: 9rem; }
+      .clock-container .clock .needle.second {
+        transform: translate(-50%, -100%) rotate(0deg);
+        height: 9rem;
+        background-color: #e74c3c; }
+    .clock-container .clock .center-point {
+      background-color: #e74c3c;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .clock-container .clock .center-point::after {
+        content: '';
+        background-color: var(--primaryColor);
+        width: .5rem;
+        height: .5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%; }
+  .clock-container .time {
+    font-size: 6rem; }
+  .clock-container .date {
+    color: #aaa;
+    font-size: 1.3rem;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    font-weight: 600; }
+    .clock-container .date .circle {
+      background-color: var(--primaryColor);
+      color: white;
+      padding: .5rem;
+      border-radius: 50%;
+      transition: all .5s ease-in; }
+
+.footer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: black;
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  background-color: white;
+  z-index: 100; }
+  .footer .copyright__text {
+    display: flex;
+    align-items: center;
+    font-size: 20px; }
+    .footer .copyright__text svg {
+      height: 2vh;
+      width: 2vw;
+      fill: red;
+      margin: 0 -1px; }
+      @media (max-width: 574px) {
+        .footer .copyright__text svg {
+          height: 4vh;
+          width: 4vw;
+          margin: 0 5px; } }
+    .footer .copyright__text a {
+      color: #3498db;
+      text-decoration: none;
+      padding: 0 0.2vw; }
+      .footer .copyright__text a:hover {
+        color: red; }
